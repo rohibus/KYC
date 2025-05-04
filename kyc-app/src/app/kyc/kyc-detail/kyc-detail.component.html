@@ -1,0 +1,62 @@
+<div class="kyc-detail-container" *ngIf="kyc">
+    <h2>KYC Details</h2>
+    
+    <div class="detail-group">
+      <label>Customer Name:</label>
+      <span>{{ kyc.customerName }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Date of Birth:</label>
+      <span>{{ kyc.dateOfBirth | date }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>PAN Number:</label>
+      <span>{{ kyc.panNumber }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Aadhar Number:</label>
+      <span>{{ kyc.aadharNumber }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Address:</label>
+      <span>{{ kyc.address }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Phone Number:</label>
+      <span>{{ kyc.phoneNumber }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Email ID:</label>
+      <span>{{ kyc.email }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Submission Date:</label>
+      <span>{{ kyc.submissionDate | date:'medium' }}</span>
+    </div>
+  
+    <div class="detail-group">
+      <label>Submitted By:</label>
+      <span>{{ kyc.submittedBy }}</span>
+    </div>
+  
+    <div *ngIf="kyc.documents.aadhar || kyc.documents.pan" class="documents">
+      <h3>Uploaded Documents</h3>
+      <div *ngIf="kyc.documents.aadhar">
+        <label>Aadhar:</label>
+        <span>{{ kyc.documents.aadhar.name }}</span>
+      </div>
+      <div *ngIf="kyc.documents.pan">
+        <label>PAN:</label>
+        <span>{{ kyc.documents.pan.name }}</span>
+      </div>
+    </div>
+  
+    <button routerLink="/kyc">Back to List</button>
+  </div>

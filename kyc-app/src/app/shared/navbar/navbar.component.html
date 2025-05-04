@@ -1,0 +1,10 @@
+<nav>
+    <div class="nav-brand">KYC Application</div>
+    <div class="nav-links" *ngIf="isLoggedIn">
+      <a routerLink="/kyc">KYC Records</a>
+      <a *ngIf="isAdmin" routerLink="/kyc/new">Create New</a>
+    </div>
+    <div class="user-info" *ngIf="isLoggedIn">
+      <button (click)="logout()">Logout</button>
+    </div>
+  </nav>
